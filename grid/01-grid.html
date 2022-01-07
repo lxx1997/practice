@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Practice</title>
+    <style type="text/css">
+        .grid {
+            width: 200px;
+            height: 200px;
+            display: grid;
+            /* 行个数及宽度个数 */
+            grid-template-columns: 100px 1fr 2fr;
+            /* 列个数及高度占比 */
+            grid-template-rows: 2fr 1fr 4fr;
+            /* 行之间与列之间的间距 */
+            grid-row-gap: 20px;
+            grid-column-gap: 20px;
+            /* 排列顺序 row column 但是不影响 行和列的宽高设置 */
+            grid-auto-flow: row;
+            /* 需要与子元素的 grid-area 属性配合使用 */
+            grid-template-areas: 'a a a'
+                                'b b b'
+                                'c c c';
+            justify-items: stretch;
+            align-items: stretch;
+        }
+        .grid div {
+            /* display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            align-content: center; */
+            background-color: var(--bgcolor);
+            color: #fff;
+        }
+        .grid .item1 {
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid">
+        <div class="item1" style="--bgcolor: rgba(255, 1, 255)">1</div>
+        <div class="item1" style="--bgcolor: rgba(1, 1, 255)">2</div>
+        <div style="--bgcolor: rgba(255, 1, 1)">3</div>
+        <div style="--bgcolor: rgba(255, 125, 255)">4</div>
+        <div style="--bgcolor: rgba(125, 1, 255)">5</div>
+        <div style="--bgcolor: rgba(255, 1, 125)">6</div>
+        <div style="--bgcolor: rgba(57, 1, 255)">7</div>
+        <div style="--bgcolor: rgba(255, 1, 24)">8</div>
+        <div style="--bgcolor: rgba(255, 46, 255)">9</div>
+    </div>
+</body>
+</html>
