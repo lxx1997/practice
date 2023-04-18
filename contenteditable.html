@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="selectable" contenteditable>http://example.com/page.htm</div>
+  <script>
+    const el = document.getElementById('selectable');
+    const selection = window.getSelection();
+    el.focus();
+    el.addEventListener("input", (e) => {
+      el.innerHTML = "http://example.com/page.htm" + e.data
+      const range = document.createRange();
+      selection.removeAllRanges();
+      range.selectNodeContents(el);
+      range.setStart(el.childNodes[0],10)
+      range.setEnd(el.childNodes[0], 13)
+      range.collapse(false);
+      selection.addRange(range);
+    })
+  </script>
+</body>
+</html>

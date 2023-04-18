@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X - Ray</title>
+    <style>
+        html, body, .x-ray {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        .x-ray {
+            position: relative;
+        }
+        .x-ray-behind, .x-ray-front {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+
+        .x-ray-behind {
+            background: url(./assets/img/Veibae_97714969_p1.png) no-repeat center;
+            background-size: contain;
+        }
+
+        .x-ray-front {
+            background: url(./assets/img/Veibae_97714969_p2.png) no-repeat center;
+            background-size: contain;
+        }
+    </style>
+</head>
+<body>
+    <div class="x-ray">
+        <div class="x-ray-behind"></div>
+        <div class="x-ray-front"></div>
+    </div>
+</body>
+</html>
